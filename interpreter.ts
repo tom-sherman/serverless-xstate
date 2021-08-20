@@ -45,7 +45,6 @@ export function createInterpreter<
     >((resolve, reject) => {
       service
         .onTransition((state) => {
-          console.log(state.value);
           // When we resume a state machine the initial state with always have either a resolve or a reject tag.
           // This ensures that we don't immediately exit when entering into the inital state.
           if (!hasTransitioned) {
