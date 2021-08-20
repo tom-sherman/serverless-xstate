@@ -37,13 +37,21 @@ export function createInterpreter<
     patchStateDefinitionTagsBug(stateDefinition);
 
     const previousState = machine.resolveState(State.create(stateDefinition));
-    console.log(previousState.value);
+
+    let hasTransitioned = false;
 
     const nextState = await new Promise<
       State<TContext, TEvent, TStateSchema, TTypestate>
     >((resolve, reject) => {
       service
         .onTransition((state) => {
+          console.log(state.value);
+          // When we resume a state machine the initial state with always have either a resolve or a reject tag.
+          // This ensures that we don't immediately exit when entering into the inital state.
+          if (!hasTransitioned) {
+            hasTransitioned = true;
+            return;
+          }
           // TODO: Not sure about stopping then resolving/rejecting, maybe we should set some mutbale state just stop?
           if (state.hasTag('resolve')) {
             service.stop();
