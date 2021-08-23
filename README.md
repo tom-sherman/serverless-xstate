@@ -67,6 +67,10 @@ We can solve this by putting some sort of FIFO queue in front of our machine. Ea
 - **Machine** - is a serverless function that is executed from an event in the queue
 - **Datastore** - is where a machine retrieves it's initial state when it starts executing, and where it persists the state when it reaches a settled node
 
+### Open questions
+
+- How do we handle migrations in the event the machine definition or context shape changes?
+
 ## Running
 
 Doesn't actually run on a lambda right now, maybe soon
