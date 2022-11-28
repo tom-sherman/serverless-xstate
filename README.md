@@ -2,6 +2,10 @@
 
 Running xstate on serverless functions.
 
+## Demo
+
+There is a demo of this architecture deployed to serverless AWS over at https://github.com/ovotech/serverless-xstate-demo
+
 ## Why?
 
 AWS Step functions are cool and allow you to build state machines, but they are difficult to setup for processes that are meant to wait for some external signal like a request from a user.
