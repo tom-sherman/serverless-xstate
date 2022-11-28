@@ -4,7 +4,7 @@ Running xstate on serverless functions.
 
 ## Demo
 
-There is a demo of this architecture deployed to serverless AWS over at https://github.com/ovotech/serverless-xstate-demo
+There is a demo of this architecture deployed to serverless AWS over at [ovotech/serverless-xstate-demo](https://github.com/ovotech/serverless-xstate-demo)
 
 ## Why?
 
@@ -77,9 +77,11 @@ We can solve this by putting some sort of FIFO queue in front of our machine. Ea
 
 ## Running
 
-Doesn't actually run on a lambda right now, maybe soon
+The code in this repo can be ran locally with:
 
 ```
 npm i
 npm run start
 ```
+
+There is a demo of this architecture deployed to AWS Lambda at [ovotech/serverless-xstate-demo](https://github.com/ovotech/serverless-xstate-demo)
